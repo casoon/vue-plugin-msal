@@ -1,12 +1,12 @@
 import { reactive } from 'vue';
 import Cookies from 'js-cookie';
+import { PublicClientApplication } from '@azure/msal-browser';
 
 const state = reactive({
     login: Cookies.get('loggedIn'),
     error: null,
     accessToken: null
 });
-
 
 const methods = {
     async login({ commit }) {

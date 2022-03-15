@@ -1,6 +1,6 @@
 {
   "name": "vue-plugin-msal",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "scripts": {
     "build": "rollup -c"
@@ -19,11 +19,17 @@
   "devDependencies": {
     "rollup": "^2.70.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-vue": "^6.0.0"
+    "rollup-plugin-vue": "^6.0.0",
+    "@vue/compiler-sfc": "^3.2.31"
   },
-  "peerDependencies": {
+  "dependencies": {
     "vue": "^3.2.31",
-    "js-cookie": "^3.0.1"
+    "js-cookie": "^3.0.1",
+    "@azure/msal-browser": "^2.22.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   }
 }
 

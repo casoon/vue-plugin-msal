@@ -3,7 +3,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 
 export default [
     {
-        input: 'src/index.js',
+        input: 'src/auth.js',
         output: [
             {
                 format: 'esm',
