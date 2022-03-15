@@ -1,0 +1,23 @@
+{
+  "name": "vue-plugin-msal",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "main": "dist/library.js",
+  "module": "dist/library.mjs",
+  "files": [
+    "dist/*"
+  ],
+  "author": "Jörn Seidel",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^2.70.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-vue": "^6.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.31"
+  }
+}
