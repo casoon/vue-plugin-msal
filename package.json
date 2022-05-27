@@ -1,12 +1,21 @@
 {
   "name": "vue-plugin-msal",
-  "version": "0.0.3",
+  "private": false,
+  "version": "0.1.0",
   "description": "",
   "scripts": {
-    "build": "rollup -c"
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
   },
-  "main": "dist/library.js",
-  "module": "dist/library.mjs",
+  "main": "./dist/vue-plugin-msal.umd.js",
+  "module": "./dist/vue-plugin-msal.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-plugin-msal.es.js",
+      "require": "./dist/vue-plugin-msal.umd.js"
+    }
+  },
   "files": [
     "dist/*"
   ],
@@ -17,15 +26,20 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "rollup": "^2.70.1",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-vue": "^6.0.0",
-    "@vue/compiler-sfc": "^3.2.31"
+    "@vitejs/plugin-vue": "^2.3.3",
+    "typescript": "^4.7.2",
+    "vite": "^2.9.9",
+    "vue-tsc": "^0.34.16"
   },
   "dependencies": {
-    "vue": "^3.2.31",
+    "pinia": "^2.0.14",
+    "vue": "^3.2.36",
+    "@azure/msal-browser": "^2.24.0",
+    "path": "^0.12.7",
+    "url": "^0.11.0",
+    "@babel/types": "^7.18.2",
     "js-cookie": "^3.0.1",
-    "@azure/msal-browser": "^2.22.1"
+    "@types/js-cookie": "^3.0.2"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
