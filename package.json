@@ -39,7 +39,10 @@
     "url": "^0.11.0",
     "@babel/types": "^7.18.2",
     "js-cookie": "^3.0.1",
-    "@types/js-cookie": "^3.0.2"
+    "@types/js-cookie": "^3.0.2",
+    "axios": "^0.26.1",
+    "vue-axios": "^3.4.1",
+    "vue-router": "^4.0.15"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
