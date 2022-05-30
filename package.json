@@ -1,12 +1,11 @@
 {
   "name": "vue-plugin-msal",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "",
   "scripts": {
-    "build": "rollup -c"
+    "build": "tsc"
   },
-  "main": "dist/library.js",
-  "module": "dist/library.mjs",
+  "main": "dist/index.js",
   "files": [
     "dist/*"
   ],
@@ -15,17 +14,27 @@
     "type": "git",
     "url": "https://github.com/casoon/vue-plugin-msal"
   },
-  "license": "ISC",
-  "devDependencies": {
-    "rollup": "^2.70.1",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-vue": "^6.0.0",
-    "@vue/compiler-sfc": "^3.2.31"
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^3.2.31"
   },
   "dependencies": {
+    "@azure/msal-browser": "^2.22.1",
     "vue": "^3.2.31",
-    "js-cookie": "^3.0.1",
-    "@azure/msal-browser": "^2.22.1"
+    "vue-router": "^4.0.14",
+    "axios": "^0.26.1",
+    "vue-axios": "^3.4.1"
+  },
+  "devDependencies": {
+    "rollup": "^2.58.0",
+    "rollup-plugin-clear": "^2.0.7",
+    "rollup-plugin-typescript2": "^0.31.2",
+    "rollup-plugin-vue": "^6.0.0",
+    "typescript": "^4.6.2"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "yarn build"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
