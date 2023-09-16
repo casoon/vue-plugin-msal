@@ -5,8 +5,7 @@ import axios, {AxiosInstance} from "axios";
 
 type AccountIdentifiers = Partial<Pick<AccountInfo, "homeAccountId"|"localAccountId"|"username">>;
 
-export const useAuth = defineStore({
-    id: 'vue-plugin-msal',
+export const useAuth = defineStore("auth", {
     state: () => {
         return ({
             inProgress: InteractionStatus.Startup,
@@ -17,7 +16,7 @@ export const useAuth = defineStore({
                 scopes: [],
                 account: undefined as AccountInfo | undefined,
             },
-            accounts: undefined as AccountInfo[] | undefined,
+            accounts: new Array<AccountInfo>(),
             msalConfig: undefined as Configuration | undefined,
             axiosConfig: undefined as Configuration | undefined,
             msalInstance:  undefined as PublicClientApplication | undefined,
@@ -67,6 +66,7 @@ export const useAuth = defineStore({
         },
         createAxiosInstance(axiosConfig: any){
             this.axiosInstance = axios.create(axiosConfig);
+            /*
             this.axiosInstance.interceptors.request.use(
                 (config) => {
                     return this.msalInstance!
@@ -107,7 +107,7 @@ export const useAuth = defineStore({
                     }
                     console.log(error.config);
                 }
-            );
+            );*/
             return this;
         },
         registerGuard(router: Router) {
